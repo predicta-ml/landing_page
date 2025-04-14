@@ -1,0 +1,78 @@
+---
+const navItems = [
+  { text: "Inicio", href: "#" },
+  { text: "Servicios", href: "#servicios" },
+  { text: "Beneficios", href: "#beneficios" },
+  { text: "Nosotros", href: "#nosotros" },
+  { text: "Contacto", href: "#contacto" },
+];
+---
+
+<header class="fixed w-full bg-white/80 dark:bg-dark-base/80 backdrop-blur-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-light-blue dark:text-dark-blue">
+          Industria Predicta
+        </a>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        {navItems.map(item => (
+          <a 
+            href={item.href}
+            class="text-gray-700 dark:text-gray-300 hover:text-light-green dark:hover:text-dark-green transition-colors"
+          >
+            {item.text}
+          </a>
+        ))}
+      </nav>
+
+      <button 
+        id="mobile-menu-button"
+        class="md:hidden flex items-center"
+        aria-label="Menú"
+      >
+        <svg 
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div 
+    id="mobile-menu"
+    class="hidden md:hidden bg-white dark:bg-dark-base"
+  >
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-light-green dark:hover:text-dark-green transition-colors"
+        >
+          {item.text}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

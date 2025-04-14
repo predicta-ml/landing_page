@@ -1,0 +1,51 @@
+---
+const services = [
+  {
+    title: "Ingeniería de Datos",
+    description: "Diseñamos e implementamos arquitecturas robustas para el procesamiento y análisis de datos industriales.",
+    icon: "📊"
+  },
+  {
+    title: "Machine Learning Industrial",
+    description: "Desarrollamos modelos predictivos para optimizar procesos y anticipar mantenimientos.",
+    icon: "🤖"
+  },
+  {
+    title: "Automatización Inteligente",
+    description: "Implementamos soluciones de automatización basadas en IA para mejorar la eficiencia operativa.",
+    icon: "⚙️"
+  },
+  {
+    title: "Consultoría Especializada",
+    description: "Asesoramos en la transformación digital de procesos industriales y gestión de datos.",
+    icon: "💡"
+  }
+];
+---
+
+<section id="servicios" class="py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-light-blue dark:text-dark-blue mb-4">
+        Nuestros Servicios
+      </h2>
+      <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+        Soluciones integrales para la industria 4.0
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map(service => (
+        <div class="bg-white dark:bg-dark-base p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-semibold text-light-blue dark:text-dark-blue mb-3">
+            {service.title}
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

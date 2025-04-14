@@ -1,0 +1,98 @@
+---
+---
+
+<section id="contacto" class="py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-light-blue dark:text-dark-blue mb-4">
+        Únete a la lista de espera
+      </h2>
+      <p class="text-xl text-gray-700 dark:text-gray-300">
+        Sé de los primeros en acceder a nuestra plataforma
+      </p>
+    </div>
+
+    <form
+      id="waitlist-form"
+      class="bg-white dark:bg-dark-base p-8 rounded-lg shadow-lg"
+    >
+      <div class="space-y-6">
+        <div>
+          <label
+            for="name"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            Nombre completo
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-light-green dark:focus:ring-dark-green focus:border-transparent dark:bg-gray-800"
+          />
+        </div>
+
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            Correo electrónico
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-light-green dark:focus:ring-dark-green focus:border-transparent dark:bg-gray-800"
+          />
+        </div>
+
+        <div>
+          <label
+            for="company"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            Empresa
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            required
+            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-light-green dark:focus:ring-dark-green focus:border-transparent dark:bg-gray-800"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-light-green hover:bg-light-green/90 dark:bg-dark-green dark:hover:bg-dark-green/90 text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors"
+        >
+          Unirme a la lista
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('waitlist-form');
+  
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    
+    try {
+      // Aquí iría la lógica para enviar los datos al backend
+      console.log('Datos del formulario:', data);
+      alert('¡Gracias por unirte a nuestra lista de espera!');
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Hubo un error al procesar tu solicitud. Por favor, intenta nuevamente.');
+    }
+  });
+</script>

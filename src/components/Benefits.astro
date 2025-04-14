@@ -1,0 +1,55 @@
+---
+const benefits = [
+  {
+    title: "Optimización de Costos",
+    description: "Stack tecnológico de última generación diseñado específicamente para sistemas de ingeniería de datos industriales, reduciendo costos operativos.",
+    icon: "💰"
+  },
+  {
+    title: "Plataforma Moderna",
+    description: "Transformamos su historian tradicional en una plataforma eficiente que reduce significativamente los costos de implementación y mantenimiento.",
+    icon: "🚀"
+  },
+  {
+    title: "Mantenimiento Predictivo",
+    description: "Modelos avanzados de machine learning que predicen fallos, reducen inactividad, optimizan mantenimiento y extienden la vida útil de equipos.",
+    icon: "🔧"
+  },
+  {
+    title: "Decisiones en Tiempo Real",
+    description: "Análisis de datos en tiempo real para maximizar la eficiencia de su línea de producción y optimizar procesos operativos.",
+    icon: "⚡"
+  }
+];
+---
+
+<section id="beneficios" class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-light-blue dark:text-dark-blue mb-4">
+        Beneficios
+      </h2>
+      <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+        Impulse su competitividad con soluciones tecnológicas de vanguardia
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {benefits.map(benefit => (
+        <div class="bg-white dark:bg-dark-base p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <div class="flex items-start">
+            <div class="text-4xl mr-4">{benefit.icon}</div>
+            <div>
+              <h3 class="text-xl font-semibold text-light-blue dark:text-dark-blue mb-3">
+                {benefit.title}
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                {benefit.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
