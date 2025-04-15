@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import Logo from '../assets/isotipo_blue.png';
 const navItems = [
   { text: "Inicio", href: "#" },
   { text: "Servicios", href: "#servicios" },
@@ -11,9 +13,16 @@ const navItems = [
 <header class="fixed w-full bg-white/80 dark:bg-dark-base/80 backdrop-blur-sm z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
-      <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-light-blue dark:text-dark-blue">
-          Industria Predicta
+      <div class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2">
+          <Image 
+            src={Logo} 
+            alt="Industria Predicta Logo" 
+            class="h-8 w-auto"
+          />
+          <span class="text-2xl font-bold text-light-blue dark:text-dark-blue">
+            Industria Predicta
+          </span>
         </a>
       </div>
       
